@@ -33,7 +33,7 @@ namespace CRUD
         }
 
 
-        SqlConnection sqlCon = null;
+        SqlConnection connection = null;
         private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Willian;Data Source=DESKTOP-79R9K1O\SQLEXPRESS";
         private string strSql = string.Empty;
 
@@ -43,9 +43,9 @@ namespace CRUD
         {
             strSql = "select * from Funcionarios where Nome=@Pesquisa";
 
-            sqlCon = new SqlConnection(strCon);
+            connection = new SqlConnection(strCon);
 
-            SqlCommand comando = new SqlCommand(strSql, sqlCon);
+            SqlCommand comando = new SqlCommand(strSql, connection);
 
             comando.Parameters.Add("@Pesquisa", SqlDbType.VarChar).Value = txtPesquisa.Text;
 
@@ -57,7 +57,7 @@ namespace CRUD
                     MessageBox.Show("Voce precisa digitar um nome");
                 }
 
-                sqlCon.Open();
+                connection.Open();
 
                 SqlDataReader dr = comando.ExecuteReader();
 
@@ -87,7 +87,7 @@ namespace CRUD
 
             finally {
 
-                sqlCon.Close();
+                connection.Close();
             }
         }
 
@@ -125,9 +125,9 @@ namespace CRUD
         {
             strSql = "insert into Funcionarios(Nome, Telefone, Celular, Email, Endereco, Numero, Bairro, RG, CPF)values(@Nome, @Telefone, @Celular, @Email, @Endereco, @Numero, @Bairro, @RG, @CPF)";
 
-            sqlCon = new SqlConnection(strCon);
+            connection = new SqlConnection(strCon);
 
-            SqlCommand comando = new SqlCommand(strSql, sqlCon);
+            SqlCommand comando = new SqlCommand(strSql, connection);
 
 
             comando.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
@@ -142,7 +142,7 @@ namespace CRUD
 
             try
             {
-                sqlCon.Open();
+                connection.Open();
 
                 comando.ExecuteNonQuery();
 
@@ -156,7 +156,7 @@ namespace CRUD
 
             finally
             {
-                sqlCon.Close();
+                connection.Close();
             }
 
 
@@ -166,9 +166,9 @@ namespace CRUD
         {
             strSql = "update Funcionarios set Nome=@Nome, Telefone=@Telefone, Celular=@Celular, Email=@Email, Endereco=@Endereco, Numero=@Numero, Bairro=@Bairro, RG=@RG, CPF=@CPF";
 
-            sqlCon = new SqlConnection(strCon);
+            connection = new SqlConnection(strCon);
 
-            SqlCommand comando = new SqlCommand(strSql, sqlCon);
+            SqlCommand comando = new SqlCommand(strSql, connection);
 
 
             comando.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
@@ -185,7 +185,7 @@ namespace CRUD
             try
             {
 
-                sqlCon.Open();
+                connection.Open();
 
                 comando.ExecuteNonQuery();
 
@@ -202,7 +202,7 @@ namespace CRUD
             finally
             {
 
-                sqlCon.Close();
+                connection.Close();
             }
 
         }
@@ -211,15 +211,15 @@ namespace CRUD
         {
             strSql = "delete from Funcionarios where Nome=@Nome";
 
-            sqlCon = new SqlConnection(strCon);
+            connection = new SqlConnection(strCon);
 
-            SqlCommand comando = new SqlCommand(strSql, sqlCon);
+            SqlCommand comando = new SqlCommand(strSql, connection);
 
             comando.Parameters.Add("@Nome", SqlDbType.VarChar).Value = txtNome.Text;
 
             try
             {
-                sqlCon.Open();
+                connection.Open();
                 comando.ExecuteNonQuery();
                 MessageBox.Show("Cadastro excluido com sucesso");
             }
@@ -230,8 +230,8 @@ namespace CRUD
             }
 
             finally
-            { 
-               sqlCon.Close();
+            {
+                connection.Close();
             }
         }
     }

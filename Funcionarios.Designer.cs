@@ -29,6 +29,7 @@ namespace CRUD
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Funcionarios));
             this.label1 = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.btn_Add = new System.Windows.Forms.Button();
@@ -75,6 +76,7 @@ namespace CRUD
             // 
             // btn_Add
             // 
+            this.btn_Add.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btn_Add.Location = new System.Drawing.Point(12, 12);
             this.btn_Add.Name = "btn_Add";
             this.btn_Add.Size = new System.Drawing.Size(75, 58);
@@ -302,6 +304,7 @@ namespace CRUD
             this.Controls.Add(this.btn_Add);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Funcionarios";
             this.Text = "Funcionarios";
             this.Load += new System.EventHandler(this.Funcionarios_Load);

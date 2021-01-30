@@ -73,6 +73,7 @@ namespace CRUD
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(436, 20);
             this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // btn_Add
             // 
@@ -83,6 +84,7 @@ namespace CRUD
             this.btn_Add.TabIndex = 2;
             this.btn_Add.Text = "Add";
             this.btn_Add.UseVisualStyleBackColor = true;
+            this.btn_Add.Click += new System.EventHandler(this.btn_Add_Click);
             // 
             // btn_Salvar
             // 
@@ -96,7 +98,7 @@ namespace CRUD
             // 
             // btn_Buscar
             // 
-            this.btn_Buscar.Location = new System.Drawing.Point(266, 12);
+            this.btn_Buscar.Location = new System.Drawing.Point(270, 12);
             this.btn_Buscar.Name = "btn_Buscar";
             this.btn_Buscar.Size = new System.Drawing.Size(75, 58);
             this.btn_Buscar.TabIndex = 4;
@@ -106,7 +108,7 @@ namespace CRUD
             // 
             // btn_Editar
             // 
-            this.btn_Editar.Location = new System.Drawing.Point(411, 12);
+            this.btn_Editar.Location = new System.Drawing.Point(410, 12);
             this.btn_Editar.Name = "btn_Editar";
             this.btn_Editar.Size = new System.Drawing.Size(75, 58);
             this.btn_Editar.TabIndex = 5;
@@ -139,6 +141,7 @@ namespace CRUD
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(482, 20);
             this.txtNome.TabIndex = 8;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // label3
             // 
@@ -200,6 +203,7 @@ namespace CRUD
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(482, 20);
             this.txtEmail.TabIndex = 14;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtEndereco
             // 
@@ -240,6 +244,7 @@ namespace CRUD
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(283, 20);
             this.txtBairro.TabIndex = 20;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // label9
             // 
@@ -256,6 +261,7 @@ namespace CRUD
             this.txtRG.Name = "txtRG";
             this.txtRG.Size = new System.Drawing.Size(190, 20);
             this.txtRG.TabIndex = 22;
+            this.txtRG.TextChanged += new System.EventHandler(this.txtRG_TextChanged);
             // 
             // label10
             // 

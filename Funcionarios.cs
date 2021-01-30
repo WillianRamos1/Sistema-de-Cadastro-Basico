@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Globalization;
 
 
 namespace CRUD
@@ -17,9 +18,8 @@ namespace CRUD
         public Funcionarios()
         {
             InitializeComponent();
-
-            /*
-            txtPesquisa.Enabled = false;
+           
+            txtPesquisa.Enabled = true;
             txtNome.Enabled = false;
             mskTelefone.Enabled = false;
             mskCelular.Enabled = false;
@@ -29,15 +29,15 @@ namespace CRUD
             txtBairro.Enabled = false;
             txtRG.Enabled = false;
             txtCPF.Enabled = false;
-            */
+            btn_Salvar.Enabled = false;
+            btn_Editar.Enabled = false;
+            btn_Excluir.Enabled = false;
         }
 
 
         SqlConnection connection = null;
         private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Willian;Data Source=DESKTOP-79R9K1O\SQLEXPRESS";
         private string strSql = string.Empty;
-
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -108,7 +108,7 @@ namespace CRUD
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            txtPesquisa.CharacterCasing = CharacterCasing.Upper;
         }
 
         private void textBox1_TextChanged_1(object sender, EventArgs e)
@@ -233,6 +233,48 @@ namespace CRUD
             {
                 connection.Close();
             }
+        }
+
+        private void btn_Add_Click(object sender, EventArgs e)
+        {
+            txtPesquisa.Enabled = true;
+            txtNome.Enabled = true;
+            mskTelefone.Enabled = true;
+            mskCelular.Enabled = true;
+            txtEmail.Enabled = true;
+            txtEndereco.Enabled = true;
+            txtNumero.Enabled = true;
+            txtBairro.Enabled = true;
+            txtRG.Enabled = true;
+            txtCPF.Enabled = true;
+            btn_Salvar.Enabled = true;
+            btn_Editar.Enabled = true;
+            btn_Excluir.Enabled = true;
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.CharacterCasing = CharacterCasing.Upper;
+        }
+
+        private void txtRG_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -51,7 +51,6 @@ namespace CRUD
 
             try
             {
-
                 if (txtPesquisa.Text == string.Empty)
                 {
                     MessageBox.Show("Voce precisa digitar um nome");

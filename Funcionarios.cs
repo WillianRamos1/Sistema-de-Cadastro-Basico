@@ -36,7 +36,7 @@ namespace CRUD
 
 
         SqlConnection connection = null;
-        private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=Willian;Data Source=DESKTOP-79R9K1O\SQLEXPRESS";
+        private string strCon = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=CRUD;Data Source=DESKTOP-T87A672\SQLEXPRESS";
         private string strSql = string.Empty;
 
         private void button1_Click(object sender, EventArgs e)
@@ -236,7 +236,8 @@ namespace CRUD
 
         private void btn_Add_Click(object sender, EventArgs e)
         {
-            txtPesquisa.Enabled = true;
+            txtPesquisa.Clear();
+            txtPesquisa.Enabled = false;
             txtNome.Enabled = true;
             mskTelefone.Enabled = true;
             mskCelular.Enabled = true;
